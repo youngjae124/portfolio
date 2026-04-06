@@ -1,8 +1,11 @@
-import { render, screen } from '@testing-library/react';
+﻿import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
+test('renders portfolio main heading', () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  expect(
+    screen.getByRole('heading', {
+      name: /사용자 흐름과 서비스 구조를 함께 고민하며 성장해온 프로젝트 기록/i,
+    })
+  ).toBeInTheDocument();
 });
